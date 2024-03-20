@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+import androidx.lifecycle.ViewModelProvider;
 
 import com.leotoloza.traductor.databinding.ActivityMainBinding;
 
@@ -17,26 +18,27 @@ import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
 private ActivityMainBinding binding;
+    private MainActivityViewModel mv;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding=ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-      String palabra=binding.palabra.getText().toString();
+        mv= ViewModelProvider.AndroidViewModelFactory.getInstance(getApplication()).create(MainActivityViewModel.class);
       binding.btnTraducir.setOnClickListener(new View.OnClickListener() {
           @Override
           public void onClick(View v) {
               String palabra=binding.palabra.getText().toString();
-              Log.d("salida",palabra);
+              mv.enviarPalabra(palabra);
           }
       });
-      Map<String,Palabra> lista= generarLista();
-        for (Map.Entry<String, Palabra> entry : lista.entrySet()) {
+
+       /** for (Map.Entry<String, Palabra> entry : lista.entrySet()) {
             String clave = entry.getKey();
             Palabra palabras = entry.getValue();
-//            Log.d("Iteracion", "Clave: " + clave + ", Traducción: " + palabras.getTraduccion() + ", Imagen: " + palabras.getImg());
+         // Log.d("Iteracion", "Clave: " + clave + ", Traducción: " + palabras.getTraduccion() + ", Imagen: " + palabras.getImg());
             Log.d("salida",clave + "-" + palabras.getTraducccion());
-        }
+        }*/
 
     }
 
