@@ -9,8 +9,8 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="409dp"
-        android:layout_height="114dp"
+        android:layout_width="337dp"
+        android:layout_height="96dp"
         android:fontFamily="monospace"
         android:text="Ingrese una palabra en español"
         android:textAlignment="center"
@@ -23,9 +23,9 @@
         app:layout_constraintVertical_bias="0.046" />
 
     <EditText
-        android:id="@+id/editTextText"
-        android:layout_width="409dp"
-        android:layout_height="98dp"
+        android:id="@+id/palabra"
+        android:layout_width="361dp"
+        android:layout_height="78dp"
         android:layout_marginTop="60dp"
         android:ems="10"
         android:hint="Ingrese su palabra"
@@ -47,6 +47,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.468"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextText"
+        app:layout_constraintTop_toBottomOf="@+id/palabra"
         app:layout_constraintVertical_bias="0.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>
