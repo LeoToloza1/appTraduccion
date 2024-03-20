@@ -30,19 +30,30 @@ private ActivityMainBinding binding;
               Log.d("salida",palabra);
           }
       });
+      Map<String,Palabra> lista= generarLista();
+        for (Map.Entry<String, Palabra> entry : lista.entrySet()) {
+            String clave = entry.getKey();
+            Palabra palabras = entry.getValue();
+//            Log.d("Iteracion", "Clave: " + clave + ", Traducción: " + palabras.getTraduccion() + ", Imagen: " + palabras.getImg());
+            Log.d("salida",clave + "-" + palabras.getTraducccion());
+        }
 
     }
 
-    public void generarLista(){
-        Map<String, String> map = new HashMap<>();
-        map.put("arbol", "tree");
-        map.put("casa", "house");
-        map.put("auto", "car");
-        map.put("gato", "cat");
-        map.put("perro", "dog");
-        map.put("caballo", "horse");
-        map.put("vaca", "cow");
+    public Map generarLista(){
+        Map<String, Palabra> map = new HashMap<>();
+        Palabra a = new Palabra("cat", R.drawable.cat);
+        map.put("gato", a);
+        Palabra b = new Palabra("car", R.drawable.car);
+        map.put("auto", b);
+        Palabra c = new Palabra("cow", R.drawable.cow);
+        map.put("vaca", c);
+        Palabra d = new Palabra("dog", R.drawable.dog);
+        map.put("perro", d);
+        return map;
     }
+
+
 
 
 
