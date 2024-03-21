@@ -16,21 +16,22 @@ public class TraduccionViewModel extends AndroidViewModel {
     public TraduccionViewModel(@NonNull Application application) {
         super(application);
     }
-    public void verificaPalabra(Intent intent){
+    public Palabra verificaPalabra(Intent intent){
+            Palabra  trad=new Palabra("Error", R.drawable.error);
         if (intent != null) {
-            String palabra = intent.getStringExtra("palabra");
-            if (palabra != null) {
-                lista=generarLista();
-                Palabra trad=lista.getOrDefault(palabra,lista.get("tradError"));
-                Log.d("salida", "Palabra traducida: " + trad.getTraducccion());
-            } else {
-                Log.d("salida", "No se recibió ninguna palabra.");
-            }
-        } else {
+                String palabra = intent.getStringExtra("palabra");
+             if (palabra != null) {
+                    lista=generarLista();
+                    trad=lista.getOrDefault(palabra.toLowerCase(),lista.get("tradError"));
+                    Log.d("salida", "Palabra traducida: " + trad.getTraducccion());
+                } else {
+                    Log.d("salida", "No se recibió ninguna palabra.");
+                }
+            }else {
             Log.d("salida", "Intent nulo.");
         }
-
-         }
+        return  trad;
+   }
 
     public Map generarLista(){
         Map<String, Palabra> map = new HashMap<>();

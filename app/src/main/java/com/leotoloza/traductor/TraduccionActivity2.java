@@ -23,8 +23,18 @@ public class TraduccionActivity2 extends AppCompatActivity {
         mv = new ViewModelProvider(this).get(TraduccionViewModel.class);
 
 
-        Intent intent = getIntent();
-        mv.verificaPalabra(intent);
+       Intent intent = getIntent();
+
+       Palabra result= mv.verificaPalabra(intent);
+
+        if ("Error".equals(result.getTraducccion())) {
+            Log.d("salida", "Error");
+        }
+        else
+        {
+            Log.d("salida", "ok");
+
+        }
     }
 
 }

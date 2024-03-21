@@ -3,7 +3,7 @@ package com.leotoloza.traductor;
 public class Palabra {
     private  String traducccion;
     private int img;
-
+public Palabra(){}
     public Palabra(String traducccion, int img) {
         this.traducccion = traducccion;
         this.img = img;

@@ -30,6 +30,7 @@ private ActivityMainBinding binding;
           public void onClick(View v) {
               String palabra=binding.palabra.getText().toString();
               mv.enviarPalabra(palabra);
+
           }
       });
 
