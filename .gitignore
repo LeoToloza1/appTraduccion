@@ -32,3 +32,5 @@ google-services.json
 # Android Profiling
 *.hprof
 .idea/misc.xml
+.idea/deploymentTargetDropDown.xml
+app/build.gradle.kts
