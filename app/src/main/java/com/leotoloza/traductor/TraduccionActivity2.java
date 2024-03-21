@@ -22,7 +22,7 @@ public class TraduccionActivity2 extends AppCompatActivity {
         mv = new ViewModelProvider(this).get(TraduccionViewModel.class);
        Intent intent = getIntent();
        Palabra result= mv.verificaPalabra(intent);
-       Log.d("salida", "Salida-> "  + result.getTraducccion() + "--"+ "img-> " + result.getImg());
+       Log.d("salida", "Salida-> "  + result.getTraducccion() + " "+ "img-> " + result.getImg());perro
        // si l apalbra buscdano esta llegara un palabr aError,  siempre se imprime lo que llegue
 
        /* if ("Error".equals(result.getTraducccion())) {
