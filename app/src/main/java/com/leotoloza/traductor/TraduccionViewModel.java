@@ -16,16 +16,13 @@ public class TraduccionViewModel extends AndroidViewModel {
     public TraduccionViewModel(@NonNull Application application) {
         super(application);
     }
-
     public void verificaPalabra(Intent intent){
         if (intent != null) {
             String palabra = intent.getStringExtra("palabra");
             if (palabra != null) {
                 lista=generarLista();
-                Palabra trad=lista.getOrDefault(palabra,null);
-
-
-                Log.d("salida", "Palabra recibida: " + trad.getTraducccion());
+                Palabra trad=lista.getOrDefault(palabra,lista.get("tradError"));
+                Log.d("salida", "Palabra traducida: " + trad.getTraducccion());
             } else {
                 Log.d("salida", "No se recibió ninguna palabra.");
             }
@@ -45,6 +42,8 @@ public class TraduccionViewModel extends AndroidViewModel {
         map.put("vaca", c);
         Palabra d = new Palabra("dog", R.drawable.dog);
         map.put("perro", d);
+        Palabra e = new Palabra("Error", R.drawable.error);
+        map.put("tradError", e);
         return map;
     }
 
