@@ -41,7 +41,7 @@ private ActivityMainBinding binding;
         }*/
 
     }
-
+/*
     public Map generarLista(){
         Map<String, Palabra> map = new HashMap<>();
         Palabra a = new Palabra("cat", R.drawable.cat);
@@ -54,11 +54,5 @@ private ActivityMainBinding binding;
         map.put("perro", d);
         return map;
     }
-
-
-
-
-
-
-
+*/
 }

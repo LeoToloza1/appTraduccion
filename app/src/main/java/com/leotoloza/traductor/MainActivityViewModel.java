@@ -17,13 +17,9 @@ public class MainActivityViewModel extends AndroidViewModel {
         Intent intent = new Intent(getApplication().getApplicationContext(), TraduccionActivity2.class);
         intent.putExtra("palabra",palabra);
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-        Log.d("salida",palabra);
+        Log.d("salida",intent.getStringExtra("palabra"));
         getApplication().startActivity(intent);
     }
-
-
-
-
 }
 
 
